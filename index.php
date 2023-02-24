@@ -1,16 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="alertify.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/dist/css/alertify.css" /> -->
+    <script src = "register.js"></script>
     <title>Registration-form</title>
 </head>
 <body>
+
+
    <h2 class="center">Registration-form</h2>
    <div class="container" style="background:#f5f5f5;">
-    <form action="action.php" name="form" class="form-bg">
+    <form class="form-bg" action="register.php" method="post" id = "registration-form" name="myform" onsubmit="return validateform()">
 
 <!-- first name field -->
         <div class="row">
@@ -59,15 +66,16 @@
             </div>
             <div class="col-75">
               <select id="country" name="country">
+                <option value="">Select a country</option>
                 <option value="australia">Australia</option>
                 <option value="canada">Canada</option>
                 <option value="usa">USA</option>
-                <option value="in">India</option>
-                <option value="bh">Bhutan</option>
-                <option value="Af">Africa</option>
-                <option value="nz">Newzealand</option>
-                <option value="my">Myanmar</option>
-                <option value="sl">Sri Lanka</option>
+                <option value="india">India</option>
+                <option value="bhutan">Bhutan</option>
+                <option value="Africa">Africa</option>
+                <option value="newzealand">Newzealand</option>
+                <option value="myanmar">Myanmar</option>
+                <option value="srilanka">Sri Lanka</option>
               </select>
             </div>
           </div>
@@ -84,8 +92,16 @@
 
   <!-- submit form -->
   <div class="row">
-    <input type="submit" value="Submit">
+    <input type="submit" value="Register">
   </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="message"></p>
+    </div>
+  </div>
+  
         </form>
    </div>
 </body>
